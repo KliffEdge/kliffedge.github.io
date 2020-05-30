@@ -8,7 +8,7 @@ i = 12012
 #     os.chdir(parent)
 # os.chdir("datasets")
 # data_dir = os.getcwd()
-df = pd.read_excel (r'datasets/acaps-_covid19_government_measures_dataset.xlsx', sheet_name='Database',nrows= 12011)
+df = pd.read_excel (r'datasets/acaps-_covid19_government_measures_dataset.xlsx', sheet_name='Database',nrows= 11614)
 data_measure_by_country = pd.DataFrame(df, columns= ['COUNTRY','MEASURE'])
 countries_raw = df['COUNTRY'].tolist()
 
@@ -18,6 +18,7 @@ countries = []
 for country in countries_raw:
     if country not in countries:
         countries.append(country)
+countries.sort()
 np.savetxt("data/countries_token.txt", countries, fmt="%s")
 #array of measures
 measures_type_token = ['Movement restrictions','Public health measures','Governance and Socio-economic measures','Social distancing' ,'Lockdown']

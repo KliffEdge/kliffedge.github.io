@@ -11,6 +11,7 @@ def init_dir():
         path = os.getcwd()
         parent = os.path.dirname(path)
         os.chdir(parent)
+    print(os.getcwd())
     os.chdir("data")
 
 
