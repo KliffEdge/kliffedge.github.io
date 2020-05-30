@@ -84,6 +84,7 @@ Jamaica
 Japan
 Jordan
 Kazakhstan
+Kenya
 Kuwait
 Kyrgyzstan
 Lao PDR
@@ -177,4 +178,3 @@ Vietnam
 Yemen
 Zambia
 Zimbabwe
-Kenya

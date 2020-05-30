@@ -13,23 +13,21 @@ countries = list(df.columns)
 
 countries.remove('date')
 countries.remove('World')
-countries_check=[]
-with open('data/countries_token.txt') as f:
-   for line in f:
-        line = line.replace("\n", "")
-        countries_check.append(line)
+# Iterate over each row 
+y_train =[]
+for country_select in countries:
+    country_spread =[]
+    for index, rows in df.iterrows(): 
+        # Create list for the current row 
+        my_list =rows[country_select]
+
+        # append the list to the final list 
+        country_spread.append(my_list)
+    y_train.append(country_spread)
 
 
+np.savetxt("data/y_train.txt", y_train, fmt="%s")
 
-
-a =set(countries) ^ set(countries_check)
-print(len(a))
-countries_not_in_orginal =list(set(countries_check).difference(countries))
-print(len(countries_not_in_orginal))
-print(countries_not_in_orginal)
-countries_not_in_new = list(set(countries).difference(countries_check))
-print(len(countries_not_in_new))
-print(countries_not_in_new)
 
 
 

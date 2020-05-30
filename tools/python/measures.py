@@ -18,6 +18,7 @@ countries = []
 for country in countries_raw:
     if country not in countries:
         countries.append(country)
+countries.sort()
 np.savetxt("data/countries_token.txt", countries, fmt="%s")
 #array of measures
 measures_type_token = ['Movement restrictions','Public health measures','Governance and Socio-economic measures','Social distancing' ,'Lockdown']
