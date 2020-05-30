@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 i = 12012
-df = pd.read_excel (r'/Users/aurovaratpatnaik/Documents/GitHub/kliffedge.github.io/datasets/acaps-_covid19_government_measures_dataset.xlsx', sheet_name='Database',nrows= 12011)
+df = pd.read_excel (r'/datasets/acaps-_covid19_government_measures_dataset.xlsx', sheet_name='Database',nrows= 12011)
 data_measure_by_country = pd.DataFrame(df, columns= ['COUNTRY','MEASURE'])
 countries_raw = df['COUNTRY'].tolist()
 
