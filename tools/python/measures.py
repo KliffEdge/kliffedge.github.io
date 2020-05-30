@@ -1,7 +1,14 @@
 import pandas as pd
 import numpy as np
+import os
 i = 12012
-df = pd.read_excel (r'/datasets/acaps-_covid19_government_measures_dataset.xlsx', sheet_name='Database',nrows= 12011)
+# for i in range(2):
+#     path = os.getcwd()
+#     parent = os.path.dirname(path)
+#     os.chdir(parent)
+# os.chdir("datasets")
+# data_dir = os.getcwd()
+df = pd.read_excel (r'datasets/acaps-_covid19_government_measures_dataset.xlsx', sheet_name='Database',nrows= 12011)
 data_measure_by_country = pd.DataFrame(df, columns= ['COUNTRY','MEASURE'])
 countries_raw = df['COUNTRY'].tolist()
 
