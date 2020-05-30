@@ -28,11 +28,11 @@ for country_select in countries:
 
 np.savetxt("data/y_train.txt", y_train, fmt="%s")
 
-# import matplotlib.pyplot as plt
-# print(y_train[7])
-# plt.plot(y_train[7])
+import matplotlib.pyplot as plt
+print(y_train[174])
+plt.plot(y_train[174])
 
-# plt.show()
+plt.show()
 
 
 
