@@ -44,7 +44,6 @@ Croatia
 Cuba
 Cyprus
 Czech Republic
-Czech republic
 Denmark
 Djibouti
 Dominica
@@ -113,8 +112,7 @@ Mauritania
 Mauritius
 Mexico
 Micronesia
-Moldova Republic Of
-Moldova Republic of
+Moldova
 Mongolia
 Montenegro
 Morocco
@@ -190,7 +188,7 @@ Uruguay
 Uzbekistan
 Vanuatu
 Venezuela
-Viet Nam
+Vietnam
 Yemen
 Zambia
 Zimbabwe
