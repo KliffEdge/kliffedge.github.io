@@ -1,8 +1,10 @@
 from geopy.geocoders import Nominatim
 import geopy as gp
 import pandas as pd
+import os
 
-df = pd.read_csv('../datasets/CSA_20200322.csv')
+datasets_dir = os.getcwd()
+df = pd.read_csv(datasets_dir + '/datasets/CSA_20200322.csv')
 
 
 lat = df['# Latitude'].values.tolist()
