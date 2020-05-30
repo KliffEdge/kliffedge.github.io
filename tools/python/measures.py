@@ -8,7 +8,7 @@ i = 12012
 #     os.chdir(parent)
 # os.chdir("datasets")
 # data_dir = os.getcwd()
-df = pd.read_excel (r'datasets/acaps-_covid19_government_measures_dataset.xlsx', sheet_name='Database',nrows= 12011)
+df = pd.read_excel (r'datasets/acaps-_covid19_government_measures_dataset.xlsx', sheet_name='Database',nrows= 11614)
 data_measure_by_country = pd.DataFrame(df, columns= ['COUNTRY','MEASURE'])
 countries_raw = df['COUNTRY'].tolist()
 
