@@ -53,10 +53,17 @@ for index, rows in df.iterrows():
     if isinstance(rows.DATE_IMPLEMENTED,datetime):
         days = rows.DATE_IMPLEMENTED - d0
         my_list[2]=days.days
+    elif isinstance(rows.DATE_IMPLEMENTED,str):
+         my_list[2]=1
+    elif isinstance(rows.DATE_IMPLEMENTED,float):
+         my_list[2]=1
+   
     # append the list to the final list 
   
     measure_by_country_raw.append(my_list) 
-
+def sortSecond(val): 
+    return val[1]  
+  
 # Print the list 
 for i in countries:
     measure_by_country.append([])
@@ -64,10 +71,14 @@ for country in countries:
     for i in measure_by_country_raw:
     
         if i[0] == country:
-            pair = i[1],i[2]
+            pair =i[2],i[1]
             measure_by_country[countries.index(country)].append(pair)
-
-np.savetxt("data/measures_by_country.txt", measure_by_country, fmt="%s")
+measure_by_country_list =[]
+for i in measure_by_country:
+    
+    sortedList = sorted(i)
+    measure_by_country_list.append(sortedList)
+np.savetxt("data/measures_by_country.txt", measure_by_country_list, fmt="%s")
        
     
 
