@@ -3,6 +3,8 @@ import numpy as np
 import os
 from datetime import datetime
 d0 = datetime(2019, 12, 31,0,0)
+
+
 i = 12012
 # for i in range(2):
 #     path = os.getcwd()
@@ -23,13 +25,11 @@ for country in countries_raw:
 countries.sort()
 np.savetxt("data/countries_token.txt", countries, fmt="%s")
 #array of measures
-measures_type_token = ['Movement restrictions','Public health measures','Governance and Socio-economic measures','Social distancing' ,'Lockdown']
+measures_type_token = ['Movement restrictions','Social distancing' ,'Lockdown']
 MR_token =[]
-PHM_token =[]
-GAS_token =[]
 SD_token =[]
 L_token =[]
-measures_token =[MR_token,PHM_token,GAS_token,SD_token,L_token]
+measures_token =[MR_token,SD_token,L_token]
 for measure,token in zip(measures_token,measures_type_token):
     f = open("data/Measure Parameters/"+token+".txt", "r")
     Lines = f.readlines() 
@@ -61,6 +61,8 @@ for index, rows in df.iterrows():
     # append the list to the final list 
   
     measure_by_country_raw.append(my_list) 
+
+print(measure_by_country_raw)
 def sortSecond(val): 
     return val[1]  
   
