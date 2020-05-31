@@ -10,8 +10,7 @@ for x in f:
 df = pd.read_excel (r'datasets/Global_Mobility_Report.xlsx')
 
 countries_raw = df['country_region'].tolist()
-
-
+ 
 #array of countries
 countries = []
 for country in countries_raw:
@@ -30,4 +29,3 @@ for i in zip(country_names,Y_train):
  
 print(len(Y_train_token))
     
-
