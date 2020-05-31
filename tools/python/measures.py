@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import os
+from datetime import datetime
+d0 = datetime(2019, 12, 31,0,0)
 i = 12012
 # for i in range(2):
 #     path = os.getcwd()
@@ -41,15 +43,20 @@ measure_by_country_raw = []
 measure_by_country = []
 
 
- 
+dayss = []
 # Iterate over each row 
 for index, rows in df.iterrows(): 
-    # Create list for the current row 
-    my_list =[rows.COUNTRY, rows.MEASURE.replace("\xa0", "")] 
-
+    # Create list for the current row
+ 
+    my_list =[rows.COUNTRY, rows.MEASURE.replace("\xa0", ""),rows.DATE_IMPLEMENTED] 
+    
+    if isinstance(rows.DATE_IMPLEMENTED,datetime):
+        days = rows.DATE_IMPLEMENTED - d0
+        my_list[2]=days.days
     # append the list to the final list 
-    measure_by_country_raw.append(my_list) 
   
+    measure_by_country_raw.append(my_list) 
+
 # Print the list 
 for i in countries:
     measure_by_country.append([])
@@ -57,7 +64,8 @@ for country in countries:
     for i in measure_by_country_raw:
     
         if i[0] == country:
-            measure_by_country[countries.index(country)].append(i[1])
+            pair = i[1],i[2]
+            measure_by_country[countries.index(country)].append(pair)
 
 np.savetxt("data/measures_by_country.txt", measure_by_country, fmt="%s")
        
