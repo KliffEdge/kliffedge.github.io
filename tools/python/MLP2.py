@@ -27,15 +27,13 @@ f = open("data/countries_token.txt", "r")
 for x in f:
   country_names.append(x.replace("\n", ""))
 
-X_test = X_train[0:90]
-Y_test = Y_train[0:90]
+X_test = X_train[0:60]
+Y_test = Y_train[0:60]
 country_names_test = country_names[0:90]
-X_train =X_train[90:180]
-Y_train=Y_train[90:180]
+X_train =X_train[60:180]
+Y_train=Y_train[60:180]
 country_names_train = country_names[90:180]
-scaler = pre.StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.fit_transform(X_test)
+
 # y_rand = []
 # y_train = []
 # for _ in range(180):
@@ -52,9 +50,9 @@ Y_train.shape
 num = 20000
 
 mlp_model_exponential = MLPRegressor( solver='lbfgs' , max_iter=num,hidden_layer_sizes=(180,))
-mlp_model_exponential.fit(X_train_scaled, Y_train)
+mlp_model_exponential.fit(X_train, Y_train)
 
-mlp_pred_exp = mlp_model_exponential.predict(X_test_scaled) 
+mlp_pred_exp = mlp_model_exponential.predict(X_test) 
 
 
 
